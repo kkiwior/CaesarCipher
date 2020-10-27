@@ -45,7 +45,7 @@
             this.caesarEncrypt.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.caesarEncrypt.Size = new System.Drawing.Size(350, 100);
             this.caesarEncrypt.TabIndex = 2;
-            this.caesarEncrypt.TextChanged += new System.EventHandler(this.szyfr1_TextChanged);
+            this.caesarEncrypt.TextChanged += new System.EventHandler(this.encrypt_textChanged);
             // 
             // caesarDecrypt
             // 
@@ -62,7 +62,7 @@
             this.key.Size = new System.Drawing.Size(100, 20);
             this.key.TabIndex = 4;
             this.key.Text = "1";
-            this.key.TextChanged += new System.EventHandler(this.klucz_TextChanged);
+            this.key.TextChanged += new System.EventHandler(this.key_textChanged);
             // 
             // tryDecode
             // 

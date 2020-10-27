@@ -17,11 +17,18 @@ namespace CaesarCipher
 
         private void EncDecForm_Load(object sender, EventArgs e)
         {
-            var file = File.ReadAllLines("slowa.txt");
-            Words = new List<string>(file);
+            try
+            {
+                var file = File.ReadAllLines("dictionary.txt");
+                Words = new List<string>(file);
+            }
+            catch (Exception)
+            {
+                tryDecode.Enabled = false;
+            }
         }
 
-        private void szyfr1_TextChanged(object sender, EventArgs e)
+        private void encrypt_textChanged(object sender, EventArgs e)
         {
             if (clicked || String.IsNullOrEmpty(caesarEncrypt.Text))
             {
@@ -32,7 +39,7 @@ namespace CaesarCipher
             Encrypt(key.Text);
         }
 
-        private void klucz_TextChanged(object sender, EventArgs e)
+        private void key_textChanged(object sender, EventArgs e)
         {
             Encrypt(key.Text);
         }
